@@ -1,0 +1,9 @@
+Created: 6/1/2019
+
+Notes:
+- following instructions from https://github.com/f1xpl/openauto/
+- had to install aasdk as well (as the wiki instructions indicated)
+- the git repo's were cloned to /opt/openauto
+- have to connect the phone via usb to the pi for this to work. USB is not supported by the pi out of the box - (https://github.com/f1xpl/openauto/wiki/udev-rules-(USB-permissions). I manually added just 1 entry to udev for Samsung, after being concerned about lax permissions with the instructions in wiki (https://github.com/f1xpl/openauto/issues/59)
+- i changed one of the source files within OpenAuto, which is to 'fix' an issue where the phone would connect then openauto would quickly crash/lose the phone. Details are https://github.com/f1xpl/openauto/issues/157, the specific fix is committed in my local git log, but is the fix described in this comment: https://github.com/f1xpl/openauto/issues/157#issuecomment-473604273
+   - i then found a 'cleaner fix' which adds an actual timestamp. i've made the adjustments to my local code and git log. details here: https://github.com/Oper92/openauto/commit/f05074e26758be7edac1208c7c3e7eb3e7292605
